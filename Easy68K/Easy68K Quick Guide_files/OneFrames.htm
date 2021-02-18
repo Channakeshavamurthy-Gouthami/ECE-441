@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0047)http://www.easy68k.com/QuickStart/OneFrames.htm -->
+<HTML><HEAD><META content="IE=5.0000" http-equiv="X-UA-Compatible">
+ <!-- By Brad Krupp and Emerson Williams--> 
+<META http-equiv="Content-Type" 
+content="text/html; charset=ks_c_5601-1987"><TITLE>Hello World Assembly 
+Demo</TITLE> 
+<STYLE type="text/css">
+    body {margin: 10 10 10 10; font-size: 14; color: black}
+    
+	body a {text-decoration: none; color: blue}
+	
+	body a:hover {text-decoration: underline; color: blue}
+	
+	body a:visited {color: blue}
+</STYLE>
+ 
+<META name="GENERATOR" content="MSHTML 10.00.9200.16660"></HEAD> 
+<BODY style='background-image: url("wall.jpg");'><BR><BR><BR>
+<TABLE>
+  <TBODY>
+  <TR>
+    <TD align="center" colspan="2"><B>We are going to be making the infamous 
+      hello world program.  This is far more difficult            in Assembly 
+      Language than it is in most other languages.<BR>This tutorial will cover 
+      simple            output and how to declare Constants. The program's main 
+      purpose, however, is to teach you how to use            EASy68K.</B>       
+            <BR><BR></TD></TR>
+  <TR>
+    <TD>            &nbsp;&nbsp;            <IMG width="662" height="463" alt="" 
+      src="OneFrames_files/01open%2520copy.gif">             <BR><BR><BR></TD>
+    <TD valign="top">
+      <UL>                    When you open the EASy68K editor/assembler 
+        (EDIT68K.exe) you will see a screen similar                    to this:  
+                       </UL></TD></TR>
+  <TR>
+    <TD>            &nbsp;&nbsp;            <IMG width="646" height="348" alt="" 
+      src="OneFrames_files/02comments%2520copy.gif">             <BR><BR><BR></TD>
+    <TD valign="top">
+      <UL>                    We will start by making comments for what this 
+        program does.                 </UL></TD>
+  <TR>
+    <TD align="center" colspan="2"><BR><B>Now we will begin coding.</B>        
+           <BR><BR></TD></TR>
+  <TR>
+    <TD>            &nbsp;&nbsp;            <IMG width="615" height="441" alt="" 
+      src="OneFrames_files/HelloWorld3.gif">             <BR><BR><BR></TD>
+    <TD valign="top">
+      <UL>                    The <B>LEA</B> command stands for Load Effective 
+        Address, which in this case it loads                    the address of 
+        the item labeled MESSAGE into address register A1                 </UL>
+      <UL><B>MOVE.B</B> stands for Move Byte (could also be <I>MOVE.W for 
+        word</I> or <I>MOVE.L for                    long</I>), #14 means the 
+        literal number 14 (if we just used 14 it would be memory location        
+                    14). D0 is a data register. Once this instruction has been 
+        ran D0 will contain the number                    14.                 
+</UL>
+      <UL><B>TRAP #15</B> does a Simulator input or output command based on 
+        the contents of D0                    hereafter these will be referred 
+        to as trap tasks                    for example:                     
+        <UL>
+<PRE>MOVE.B	#14,D0<BR>TRAP	#15    Is trap task 14<BR><BR>MOVE.B	#4,D0<BR>TRAP	#15    Is trap task 4<BR></PRE></UL> 
+        	                    Here is a list of various <A href="http://www.easy68k.com/QuickStart/TrapTasks.htm"><U>trap 
+        tasks</U></A> and what they do. <BR>		    For a list of trap tasks to 
+        use for purposes other than Text I/O consult the EASy68K help section.   
+                                        </UL>
+      <UL><B>MESSAGE</B> is a label                     <B>DC.B</B> reserves 
+        memory for the item following it (in this case our message)              
+              because trap <I>task 14</I> requires a <I>NULL</I> to terminate 
+        the string we must                    follow our message with <B>0</B>.  
+                       </UL></TD></TR>
+  <TR>
+    <TD>            &nbsp;&nbsp;             <IMG width="479" height="144" 
+      alt="" src="OneFrames_files/04assembling%2520copy.gif">             
+      <BR><BR><BR></TD>
+    <TD valign="top">
+      <UL>                Now we will assemble and run our program, first 
+        click the assemble button, which looks like this.<BR></UL></TD></TR>
+  <TR>
+    <TD>            &nbsp;&nbsp;            <IMG width="313" height="127" alt="" 
+      src="OneFrames_files/05assembling%2520copy.gif">             
+    <BR><BR><BR></TD>
+    <TD valign="top">
+      <UL>                Assuming you entered everything correctly you should 
+        see this<BR></UL>
+      <UL>                If you get an error make sure you entered everything 
+        correctly, or you can get the completed file from <A href="http://www.easy68k.com/QuickStart/Hello%20World%20Program.txt"><U>here</U></A>. 
+                        </UL></TD></TR>
+  <TR>
+    <TD>            &nbsp;&nbsp;            <IMG width="731" height="729" alt="" 
+      src="OneFrames_files/HelloWorldSim.gif">             <BR><BR><BR></TD>
+    <TD valign="top">
+      <UL>                Once the program is assembled without error click 
+        the execute button, which will open the EASy68K simulator shown at the 
+        left.<BR></UL></TD></TR>
+  <TR>
+    <TD>              &nbsp;&nbsp;            <IMG width="725" height="193" 
+      alt="" src="OneFrames_files/07sim%2520copy.gif">             
+    <BR><BR><BR></TD>
+    <TD valign="top">
+      <UL>                Next to start the program you will press the run 
+        button, which resembles the assemble button<BR></UL></TD></TR>
+  <TR>
+    <TD>            &nbsp;&nbsp;            <IMG width="453" height="277" alt="" 
+      src="OneFrames_files/08sim%2520copy.gif">             <BR><BR><BR></TD>
+    <TD valign="top">
+      <UL>                After the program runs you should see this           
+              </UL>
+      <UL>                If the ouput window did not open click <I>View</I> 
+        then <I>Output Window</I>.  If it still does not work check the code 
+        again.                 </UL></TD></TR>
+  <TR>
+    <TD align="center" colspan="2"><BR><B>Now we will add code to allow 
+      display of a new line.</B>             <BR><BR></TD></TR>
+  <TR>
+    <TD>            &nbsp;&nbsp;            <IMG width="615" height="441" alt="" 
+      src="OneFrames_files/HelloWorld4.gif">             <BR><BR><BR></TD>
+    <TD valign="top">
+      <UL>                Here is an example of the previous program with the 
+        carriage return and line feed added.                 </UL>
+      <UL>                CR and LF are as labels to use in place of the ASCII 
+        codes for the carriage return and line feed.<BR><BR></UL></TD></TR>
+  <TR>
+    <TD>            &nbsp;&nbsp;            <IMG width="615" height="441" alt="" 
+      src="OneFrames_files/HelloWorld5.gif"><BR><BR></TD>
+    <TD valign="top">
+      <UL>                This is how you would add a second line to your 
+        message.  The terminating 0 was moved to the last line.                 
+      </UL></TD></TR>
+  <TR>
+    <TD>            &nbsp;&nbsp;            <IMG width="453" height="277" alt="" 
+      src="OneFrames_files/12crlf%2520copy.gif"><BR><BR></TD>
+    <TD valign="top">
+      <UL>                Output of the code from above.  Notice the text from 
+        the second DC.B is on the next line.                 </UL></TD></TR>
+  <TR>
+    <TD>            &nbsp;&nbsp;            <IMG width="630" height="499" alt="" 
+      src="OneFrames_files/HelloWorld6.gif"><BR><BR></TD>
+    <TD valign="top">
+      <UL>                The fourth line of MESSAGE shows how you can code 
+        multiple lines of text in a single DC.B.                 </UL></TD></TR>
+  <TR>
+    <TD>            &nbsp;&nbsp;            <IMG width="453" height="277" alt="" 
+      src="OneFrames_files/14crlf%2520copy.gif"><BR><BR></TD>
+    <TD valign="top">
+      <UL>                Output of the code from above.  Notice the fourth 
+        DC.B's text is displayed on two lines.                If your code does 
+        not work, you can recieve the correct code <A href="http://www.easy68k.com/QuickStart/Hello%20World%20Program%202.txt"><U>here</U></A> 
+                        </UL></TD></TR>
+  <TR>
+    <TD align="center" colspan="2"><B>This concludes Part 1 of the tutorial. 
+      You should now be able to use EASy68K to write, assemble, and run a simple 
+      program.</B>             </TD></TR></TBODY></TABLE></BODY></HTML>
